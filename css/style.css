@@ -911,8 +911,6 @@ p.footer-contact {
 }
 
 .form-field {
-  display: flex;
-  flex-direction: column;
   position: relative;
   margin-bottom: 10px;
   width: 100%;
@@ -933,44 +931,7 @@ p.footer-contact {
 
 .form-field-lable {
   margin-bottom: 4px;
-}
-
-.form-field input {
-  width: calc(100% - 2px);
-  height: 38px;
-  position: absolute;
-  left: 1px;
-  border: none;
-  border-radius: 4px;
-  padding-left: 42px;
-  background: transparent;
-  z-index: 1;
-}
-
-.form-field-focus-box {
-  width: 100%;
-  height: 40px;
-  padding-left: 42px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  transition: border 250ms var(--timing-function);
-}
-
-.form-field-focus-box:focus-within .form-field-icon {
-  fill: #2196f3;
-}
-
-.form-field-focus-box:hover {
-  border: 1px solid #2196f3;
-  cursor: text;
-}
-
-.form-field-focus-box:hover .form-field-icon {
-  fill: #2196f3;
-}
-
-.form-field label,
-.form-field textarea::placeholder {
+  display: inline-block;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
@@ -978,7 +939,49 @@ p.footer-contact {
   color: #757575;
 }
 
+.form-field-focus-box-input {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  left: 1px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  background: transparent;
+  z-index: 1;
+  outline: none;
+  transition: border 250ms var(--timing-function);
+}
+.form-field-focus-box-input:hover,
+.form-field-focus-box-input:focus {
+  border: 1px solid #2196f3;
+}
+
+.form-field-focus-box {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  border-radius: 4px;
+}
+
+.form-field-focus-box:focus-within .form-field-icon {
+  fill: #2196f3;
+}
+
+.form-field-focus-box-input:hover + .form-field-icon {
+  fill: #2196f3;
+}
+
+.form-field textarea::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
 .form-field textarea {
+  width: 100%;
   height: 120px;
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -987,9 +990,11 @@ p.footer-contact {
   transition: border 250ms var(--timing-function);
 }
 
-.form-field textarea:hover {
+.form-field textarea:hover,
+.form-field textarea:focus {
   border: 1px solid #2196f3;
   cursor: text;
+  outline: none;
 }
 
 .form-agreement {
@@ -1001,27 +1006,70 @@ p.footer-contact {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
-
   color: #757575;
 }
 
 .form-agreement label {
-  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+}
+.form-agreement input {
+  appearance: none;
+}
+
+.check-input {
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  transition: background-color 250ms var(--timing-function),
+    border 250ms var(--timing-function);
+}
+
+.check-input:checked {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #2196f3;
+  background-color: #2196f3;
+  border-radius: 2px;
+}
+
+.check-icon {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  fill: none;
+  stroke: none;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+.check-input:checked + .check-icon {
+  stroke-width: 1px;
+  stroke: #ffffff;
+  fill: #ffffff;
 }
 
 .form-agreement a {
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 1.71;
   letter-spacing: 0.03em;
   color: #757575;
   text-decoration-line: underline;
   color: #2196f3;
 }
 
-.form-agreement input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
+.modal-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-subscribe {
@@ -1034,14 +1082,20 @@ p.footer-contact {
 }
 
 .footer-subscribe-form-input {
+  margin: 0;
+  padding: 15px 16px;
   width: 358px;
   height: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  color: rgba(255, 255, 255, 0.6);
+  background-color: var(--footer-bg-color);
   border-radius: 4px;
-  background: transparent;
-  padding-left: 16px;
-  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  transition: border-color 250ms var(--timing-function);
+}
+
+.footer-subscribe-form-input:focus {
+  border: 1px solid #188ce8;
 }
 
 .footer-subscribe-btn {

@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Web Studio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -462,6 +462,9 @@
         </div>
       </section>
     </main>
+
+    <!-- Footer-->
+
     <footer class="footer">
       <div class="container footer-adress-box">
         <div>
@@ -560,6 +563,9 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal Box -->
+
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-close-btn" data-modal-close>
@@ -573,32 +579,50 @@
           <div class="form-field">
             <label for="name" class="form-field-lable"> Имя </label>
             <div class="form-field-focus-box">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-field-focus-box-input"
+              />
               <svg class="form-field-icon">
                 <use href="./images/icons-defs.svg#icon-person-ico"></use>
               </svg>
-              <input type="text" name="name" id="name" />
             </div>
           </div>
 
           <div class="form-field">
             <label for="tel" class="form-field-lable"> Телефон </label>
             <div class="form-field-focus-box">
-              <input type="text" name="tel" id="tel" />
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                class="form-field-focus-box-input"
+                title="+380 (11) 111-11-11"
+              />
               <svg class="form-field-icon">
                 <use href="./images/icons-defs.svg#icon-phone-ico"></use>
               </svg>
             </div>
           </div>
+
           <div class="form-field">
-            <label for="mail" class="form-field-lable"> Почта </label>
+            <label for="email" class="form-field-lable"> Почта </label>
             <div class="form-field-focus-box">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                class="form-field-focus-box-input"
+              />
               <svg class="form-field-icon">
                 <use href="./images/icons-defs.svg#icon-email-ico"></use>
               </svg>
-
-              <input type="text" name="mail" id="mail" />
             </div>
           </div>
+
           <div class="form-field comment">
             <label for="comment" class="form-field-lable"> Комментарий </label>
             <textarea
@@ -608,9 +632,13 @@
             ></textarea>
           </div>
           <div class="form-agreement">
-            <input type="checkbox" name="agreement" id="agreement" />
-            <label for="agreement">
-              Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a>
+            <label
+              ><input type="checkbox" class="check-input" /> Соглашаюсь с
+              рассылкой и принимаю&nbsp;
+              <svg class="check-icon">
+                <use href="images/icons-defs.svg#icon-check"></use>
+              </svg>
+              <a href="">Условия договора</a>
             </label>
           </div>
 
