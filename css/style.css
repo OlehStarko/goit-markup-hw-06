@@ -1093,6 +1093,7 @@ p.footer-contact {
   transition: border-color 250ms var(--timing-function);
 }
 
+.footer-subscribe-form-input:hover,
 .footer-subscribe-form-input:focus {
   border: 1px solid #188ce8;
 }
